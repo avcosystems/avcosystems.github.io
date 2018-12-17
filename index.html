@@ -9,14 +9,14 @@
   <link rel="shortcut icon" href="assets/images/favicon-96x96.png" type="image/x-icon">
   <meta name="description" content="Avco Systems provide custom software solutions at speed using a unique rapid prototyping approach, and complete flexibility by not charging for changing requirements.">
   <title>Custom Software Solutions | Avco Systems</title>
-  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css">
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/tether/tether.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/dropdown/css/style.css">
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   
@@ -28,7 +28,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-P7P8MJC');</script>
 <!-- End Google Tag Manager -->
+<script>
+function submitContact(event) {
+   event.preventDefault();
+   var formElement = document.querySelector("form");
+   var success = document.querySelector("#contact-success");
+   var err = document.querySelector("#contact-error");
+   var request = new XMLHttpRequest();
+   request.open("POST", "https://www.avcosystems.com/api/contact-full");
 
+   request.onreadystatechange = function() {
+      if(request.readyState == 4) {
+         if (request.status == 200) {
+           success.classList.add("alert-display");
+         } else {
+           err.classList.add("alert-display");
+         }
+      }
+   }
+    request.send(new FormData(formElement));
+}
+</script>
 </head>
 <body>
   <section class="menu cid-rbVUS0AcMR" once="menu" id="menu1-0">
@@ -469,24 +489,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="container">
         <div class="row main-row justify-content-center">
             <div class="col-sm-12 col-lg-8 col-md-6" data-form-type="formoid">
-                <div data-form-alert="" hidden="">Thank you. We'll be in touch to discuss your requirements soon.</div>
-                <form class="mbr-form" action="https://mobirise.com/" method="post" data-form-title="My Mobirise Form"><input type="hidden" name="email" data-form-email="true" value="s99yeDzaEwqW+myhHzrarJWswUrvRz0ZjS7ssmunDfGhQpiaOxIpwShiUlN+VZTjCIome71g3GIPifstCgwJaSYZ4IkbmVoSUCnVl7VsdJgH16O5pdvVV/hF4vQ79W+l">
+                <div id="contact-success" class="alert alert-form alert-success">Thank you. We'll be in touch to discuss your requirements soon.</div>
+                <div id="contact-error" class="alert alert-form alert-error">Hmm, something went wrong. Please try again or give us a ring on 01753 213 700</div>
+                <form class="mbr-form" onsubmit="submitContact(event)" method="post" action="avcosystems.com/api/contact-full">
                     <div class="row input-main">
                         
-                        <div class="col-md-12 col-lg-6 input-wrap" data-for="email">
+                        <div class="col-md-12 input-wrap" data-for="email">
                             <input type="email" class="field display-7" name="email" data-form-field="Email" placeholder="Email*" required="" id="email-form1-g">
                         </div>
-                        <div class=" col-md-12 col-lg-6 input-wrap" data-for="phone">
-                            <input type="text" class="field display-7" name="phone" data-form-field="Phone" placeholder="Phone" id="phone-form1-g">
-                        </div>
+                        
                         
                     </div>
 
                     <div class="row input-main">
-                        <div class="col-md-12 col-lg-12 form-group" data-for="message">
-                            <textarea type="text" class="form-control display-7" name="message" rows="7" data-form-field="Message" placeholder="Message" id="message-form1-g"></textarea>
+                        <div class="col-md-12 col-lg-12 form-group" data-for="extra-info">
+                            <textarea type="text" class="form-control display-7" name="extra-info" rows="7" data-form-field="extra-info" placeholder="Message" id="extra-info-form1-g"></textarea>
                         </div>
                     </div>
+                    <label class="row input-main consent">
+                      <input type="checkbox" name="consent" value="true" required="" id="consent-form1-g">I consent to being contacted by Avco Systems in
+                      relation to this request
+                    </label>
+                    <input type="hidden" name="ref" value="landing" id="ref-form1-g">
                     <div class="row input-main">
                         <div class="col-md-12 col-lg-12 btn-row">
                             <span class="input-group-btn"><button href="" type="submit" class="btn btn-form btn-info display-4">SEND</button></span>
@@ -596,16 +620,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <script src="assets/popper/popper.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/touch-swipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/dropdown/js/script.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
   <script src="assets/parallax/jarallax.min.js"></script>
   <script src="assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
   <script src="assets/mbr-clients-slider/mbr-clients-slider.js"></script>
   <script src="assets/mbr-tabs/mbr-tabs.js"></script>
   <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
-  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/touch-swipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  <script src="assets/formoid/formoid.min.js"></script>
   
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7P8MJC"

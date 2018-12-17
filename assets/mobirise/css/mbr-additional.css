@@ -2045,6 +2045,18 @@ body {
 .cid-rbWxX7n87l .mbr-section-title {
   color: #ffffff;
 }
+.cid-rbWxX7n87l .consent {
+  color: white;
+}
+.cid-rbWxX7n87l .alert-form {
+  display: none;
+}
+.cid-rbWxX7n87l .alert-display {
+  display: block;
+}
+.cid-rbWxX7n87l .alert-error {
+  background-color: #CD0000;
+}
 .cid-rbWDIbtuSo {
   padding-top: 45px;
   padding-bottom: 0px;
