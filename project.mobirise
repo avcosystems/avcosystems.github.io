@@ -49,7 +49,7 @@
     "noImageResize": "",
     "google-analytics": "",
     "cookiesAlert": "",
-    "gdpr": ""
+    "gdpr": "",
   },
   "pages": {
     "index.html": {
@@ -1383,6 +1383,7 @@
               "color": "#ffffff"
             },
             ".consent": {
+              "align-items": "center",
               "color": "white"
             },
             ".alert-form": {
