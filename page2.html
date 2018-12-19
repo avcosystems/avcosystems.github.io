@@ -491,8 +491,9 @@ function submitContact(event) {
     <div class="container">
         <div class="row main-row justify-content-center">
             <div class="col-sm-12 col-lg-8 col-md-6" data-form-type="formoid">
-                
-                                <form class="mbr-form" onsubmit="submitContact(event)" method="post" action="avcosystems.com/api/contact-full">
+                <div id="contact-success" class="alert alert-form alert-success">Thank you. We'll be in touch to discuss your requirements soon.</div>
+                <div id="contact-error" class="alert alert-form alert-error">Hmm, something went wrong. Please try again or give us a ring on 01753 213 700</div>
+                <form class="mbr-form" onsubmit="submitContact(event)" method="post" action="avcosystems.com/api/contact-full">
                     <div class="row input-main">
                         
                         <div class="col-md-12 input-wrap" data-for="email">
@@ -518,6 +519,7 @@ function submitContact(event) {
                         </div>
                     </div>
                 </form>
+
             </div>
             <div class="col-sm-12 col-lg-4 col-md-6 text-block">            
                 <div class="content-panel">
